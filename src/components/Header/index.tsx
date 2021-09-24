@@ -1,4 +1,5 @@
-import { SignButton } from './SignButton'
+import { ActiveLink } from '../ActiveLinks';
+import { SignButton } from './SignButton';
 
 import style from './styles.module.scss'
 
@@ -8,8 +9,12 @@ export const Header = () => {
       <div className={style.HeaderContent}>
         <img src="/images/logo.svg" alt="IG.News" />
         <nav>
-          <a className={style.active}>Home</a>
-          <a>Posts</a>
+          <ActiveLink activeClassName={style.active} href='/'>
+            <a >Home</a>
+          </ActiveLink>
+          <ActiveLink activeClassName={style.active} href='/posts' prefetch>
+            <a>Posts</a>
+          </ActiveLink>
         </nav>
 
         <SignButton />
